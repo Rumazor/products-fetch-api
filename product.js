@@ -4,12 +4,10 @@ const url = 'https://course-api.com/javascript-store-single-product'
 const fetchProduct = async ()=>{
     try {
         productDOM.innerHTML = `<div class="loading"></div>`
-
         // uso el URLSeachParams para buscar el ID unico de cada producto
         const params = new URLSearchParams(window.location.search)
         const id = params.get('id');
-        
-        // el ID es dinamico para hacer un fetch unico de cada producto
+        // el ID es dinamico para hacer un fetch unico de cada producto desde la API
         const response = await fetch(`${url}?id=${id}`)
         const data = await response.json()
         return data
@@ -19,17 +17,12 @@ const fetchProduct = async ()=>{
 
 }
 
-fetchProduct()
-
 const displayProduct = (product) =>{
-
     //company,colors,description, name:title,price,image(url:img)
-    
-    const {company,name,price,colors,description,image} = product.fields
+        const {company,name,price,colors,description,image} = product.fields
     const {url:img} = image[0]
     document.title = name.toUpperCase()
-    
-    //colors
+        //colors
     console.log(colors);
     const colorsList = colors.map((color)=>{
         return `<span class="product-color" style="background:${color} "></span>`

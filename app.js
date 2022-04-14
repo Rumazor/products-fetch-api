@@ -1,5 +1,4 @@
 import { getElement } from "./module.js"
-import { displayProducts } from "./module.js"
 import { start } from "./module.js"
 
 

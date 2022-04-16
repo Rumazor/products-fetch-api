@@ -24,7 +24,7 @@ const displayProducts = (list) =>{
             <img src="${img}"class="single-product-img img" alt="couch">
             <footer>
             <h5 class="name">${title}</h5>
-            <span class="price">${formatPrice}</span>
+            <span class="price">$${formatPrice}</span>
             </footer>
         </a>`
     }).join('');
